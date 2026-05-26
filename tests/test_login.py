@@ -1,28 +1,16 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-import time
+from pages.login_page import LoginPage
 
 def test_login_valido():
 
     driver = webdriver.Edge()
 
-    driver.get("https://www.saucedemo.com/")
+    login_page = LoginPage(driver)
 
-    time.sleep(5)
-
-    campo_usuario = driver.find_element(By.ID, "user-name")
-    campo_senha = driver.find_element(By.ID, "password")
-    botao_login = driver.find_element(By.ID, "login-button")
-
-    campo_usuario.send_keys("standard_user")
-    
-    time.sleep(5)
-    
-    campo_senha.send_keys("secret_sauce")
-
-    time.sleep(5)
-    
-    botao_login.click()
+    login_page.acessar_site()
+    login_page.preencher_usuario("standard_user")
+    login_page.preencher_senha("secret_sauce")
+    login_page.clicar_login()
 
     assert "inventory" in driver.current_url
 
