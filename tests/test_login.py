@@ -1,9 +1,6 @@
-from selenium import webdriver
 from pages.login_page import LoginPage
 
-def test_login_valido():
-
-    driver = webdriver.Edge()
+def test_login_valido(driver):
 
     login_page = LoginPage(driver)
 
@@ -13,5 +10,3 @@ def test_login_valido():
     login_page.clicar_login()
 
     assert "inventory" in driver.current_url
-
-    driver.quit()
