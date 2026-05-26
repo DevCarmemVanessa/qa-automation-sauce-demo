@@ -9,4 +9,4 @@ def test_login_valido(driver):
     login_page.preencher_senha("secret_sauce")
     login_page.clicar_login()
 
-    assert login_page.obter_titulo_produtos() == "Erro"
+    assert login_page.obter_titulo_produtos() == "Products"
