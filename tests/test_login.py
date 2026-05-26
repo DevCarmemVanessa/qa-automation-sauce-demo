@@ -8,7 +8,7 @@ def test_login_valido():
 
     driver.get("https://www.saucedemo.com/")
 
-    time.sleep(2)
+    time.sleep(5)
 
     campo_usuario = driver.find_element(By.ID, "user-name")
     campo_senha = driver.find_element(By.ID, "password")
@@ -16,11 +16,11 @@ def test_login_valido():
 
     campo_usuario.send_keys("standard_user")
     
-    time.sleep(2)
+    time.sleep(5)
     
     campo_senha.send_keys("secret_sauce")
 
-    time.sleep(2)
+    time.sleep(5)
     
     botao_login.click()
 
