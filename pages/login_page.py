@@ -16,3 +16,6 @@ class LoginPage:
 
     def clicar_login(self):
         self.driver.find_element(By.ID, "login-button").click()
+
+    def obter_titulo_produtos(self):
+        return self.driver.find_element(By.CLASS_NAME, "title").text
